@@ -16,3 +16,5 @@ indent_size = 2
 
 [*.{yml,yaml,jsonl}]
 indent_style = space
+indent_size = 2
+
