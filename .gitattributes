@@ -6,3 +6,4 @@
 *.svg text
 *.yml text
 *.yaml text
+*.toml text
