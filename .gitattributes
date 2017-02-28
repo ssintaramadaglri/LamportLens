@@ -7,3 +7,4 @@
 *.yml text
 *.yaml text
 *.toml text
+*.cff text
