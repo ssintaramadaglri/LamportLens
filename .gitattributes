@@ -8,3 +8,4 @@
 *.yaml text
 *.toml text
 *.cff text
+*.jsonl text
