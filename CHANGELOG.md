@@ -31,3 +31,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The JSON report moves to fixed snake_case field names (`bands`,
   `owners`, `totals`, `parse_errors`) so downstream dashboards can
   pin a schema. This is the one breaking change in the 2.x line.
+- The text report header line and column layout are frozen; the
+  `LAMPORTLENS REPORT` banner only changes with a major version.
+
+## [1.5.0] - 2026-07-14
+
+### Added
+
+- `audit --limit N` caps the number of listed findings while the
+  totals still cover the whole snapshot.
