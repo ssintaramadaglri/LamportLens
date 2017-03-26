@@ -15,3 +15,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - The audit text report closes with a totals summary line: records,
   total bond, underfunded deficit, and the lamports a closure sweep
+  would return.
+- The `bands` report prints the executable-excluded count next to the
+  seven fixed bands, so the excluded accounts are never silently lost.
+
+### Fixed
+
+- Owners table ordering is stable when two owners hold equal locked
+  lamports (address order breaks ties instead of insertion order).
