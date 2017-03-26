@@ -23,3 +23,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Owners table ordering is stable when two owners hold equal locked
   lamports (address order breaks ties instead of insertion order).
+
+## [2.0.0] - 2026-08-05
+
+### Changed
+
+- The JSON report moves to fixed snake_case field names (`bands`,
+  `owners`, `totals`, `parse_errors`) so downstream dashboards can
+  pin a schema. This is the one breaking change in the 2.x line.
