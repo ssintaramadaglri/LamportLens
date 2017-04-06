@@ -40,3 +40,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - `audit --limit N` caps the number of listed findings while the
   totals still cover the whole snapshot.
+- `lamportlens version` as a subcommand, alongside the existing
+  `--version` flag.
+
+### Documentation
+
+- `docs/TESTING.md` collects the local test recipe for both engines.
+
+## [1.0.2] - 2026-06-02
