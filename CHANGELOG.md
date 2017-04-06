@@ -48,3 +48,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `docs/TESTING.md` collects the local test recipe for both engines.
 
 ## [1.0.2] - 2026-06-02
+
+### Fixed
+
+- Records whose data length sits exactly on a band edge now land in
+  the same band in both engines; the boundary rule is pinned by a
+  regression test and by the parity gate.
+- The parse-error count is reported in the JSON report even when no
+  findings are present.
