@@ -56,3 +56,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   regression test and by the parity gate.
 - The parse-error count is reported in the JSON report even when no
   findings are present.
+
+## [1.0.0] - 2026-05-19
+
+### Changed
+
+- The CLI contract is stable: `audit`, `bands` and `owners`, the flag
+  set, and the exit codes (0 clean, 1 findings or parse errors, 2
+  usage) are frozen for the 1.x line.
