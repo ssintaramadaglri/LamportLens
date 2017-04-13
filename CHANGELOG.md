@@ -89,3 +89,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `docs/ARCHITECTURE.md` document the input format, the rate variable,
   the operator workflow, and the module layout.
 - A worked walkthrough with a real run of both engines joined the
+  README.
+
+### Fixed
+
+- The owners table prints lamports without thousands separators when
+  `--format json` is selected.
+
+## [0.7.0] - 2023-04-18
+
