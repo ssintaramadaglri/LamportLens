@@ -73,3 +73,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Strict validation: address shape, the 10 MiB cap on `data_len`, and
   duplicate addresses are all reported as parse errors with line
   numbers instead of aborting the run.
+- CI runs the cross-engine parity gate on every push; a disagreement
+  between the Python and TypeScript engines fails the build.
+
+### Changed
+
+- Parse errors no longer stop the audit; every bad line is collected
+  and the good records are still summarised.
+
