@@ -81,3 +81,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Parse errors no longer stop the audit; every bad line is collected
   and the good records are still summarised.
 
+## [0.8.0] - 2024-06-04
+
+### Added
+
+- `docs/FORMAT.md`, `docs/RATE_SCHEDULE.md`, `docs/OPERATIONS.md` and
+  `docs/ARCHITECTURE.md` document the input format, the rate variable,
+  the operator workflow, and the module layout.
+- A worked walkthrough with a real run of both engines joined the
