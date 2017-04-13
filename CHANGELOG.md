@@ -64,3 +64,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The CLI contract is stable: `audit`, `bands` and `owners`, the flag
   set, and the exit codes (0 clean, 1 findings or parse errors, 2
   usage) are frozen for the 1.x line.
+- Reports are deterministic byte for byte for a given input and rate.
+
+## [0.9.0] - 2025-06-24
+
+### Added
+
+- Strict validation: address shape, the 10 MiB cap on `data_len`, and
+  duplicate addresses are all reported as parse errors with line
+  numbers instead of aborting the run.
