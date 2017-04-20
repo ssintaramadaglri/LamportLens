@@ -106,3 +106,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.6.3] - 2022-06-14
 
+### Fixed
+
+- Rate presets reject zero and negative lamports-per-byte values with
+  a usage error instead of dividing the snapshot into nonsense.
+- Every parse error carries its line number in both report formats.
+
+## [0.6.0] - 2022-02-08
+
