@@ -98,3 +98,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.7.0] - 2023-04-18
 
+### Added
+
+- The reclaimable-on-close total and the underfunded deficit are part
+  of every report, not just the JSON one.
+- The owners table is ranked by locked lamports, highest first.
+
+## [0.6.3] - 2022-06-14
+
