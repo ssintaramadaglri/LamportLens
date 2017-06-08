@@ -123,3 +123,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- The rent arithmetic is integer only: `(128 + data_len) * rate`,
+  with no floating point anywhere in either engine.
+
+## [0.5.0] - 2020-12-15
+
+### Added
+
+- An independent TypeScript implementation lives in `verifier/` with
