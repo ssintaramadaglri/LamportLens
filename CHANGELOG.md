@@ -114,3 +114,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.6.0] - 2022-02-08
 
+### Added
+
+- `--preset` selects a rate step by name, and `--lamports-per-byte`
+  sets an explicit rate for the audit.
+- The SIMD-0437 schedule steps from 6,960 down to 696 ship as named
+  presets; 6,333 remains the documented mainnet default.
+
+### Changed
+
