@@ -131,3 +131,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - An independent TypeScript implementation lives in `verifier/` with
+  its own test suite and build.
+- `scripts/parity.py` runs both engines over every fixture and fails
+  on the first disagreement.
+
+## [0.4.0] - 2019-11-26
+
+### Added
+
