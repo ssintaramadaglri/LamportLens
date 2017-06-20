@@ -139,3 +139,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `--format json` and `--output FILE` produce a machine-readable
+  report for diffing snapshots between runs.
+- Sample fixtures with a deterministic builder; the fixtures are
+  labelled as synthetic vectors in `samples/README.md`.
+
+## [0.3.0] - 2018-10-09
+
+### Added
