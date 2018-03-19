@@ -6,3 +6,7 @@
 |---------|-----------|
 | 2.1.x   | Yes       |
 | 1.0.x   | Yes       |
+| < 1.0   | No        |
+
+## What LamportLens is, in security terms
+
