@@ -19,3 +19,7 @@ not:
 - execute anything from the input, including field values that resemble code
   or paths;
 - write files by default; `--output` writes exactly one report file to the
+  path you name.
+
+A snapshot is public information by construction: account addresses, lamports,
+data lengths, owners, and the executable flag are all visible to any node.
