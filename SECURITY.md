@@ -32,3 +32,7 @@ The realistic threat model for a tool like this is malformed input:
    The parser is covered by tests for every documented validation rule, and a
    crash is treated as a bug, not a hardening incident.
 2. **Resource consumption.** A very large snapshot consumes memory for the
+   record list and the aggregates. There is no streaming mode yet; a
+   multi-gigabyte snapshot is not a supported input today.
+3. **Output rendering.** Addresses and owner program ids are printed as they
+   appear in the input. If your snapshot contains control characters in
