@@ -54,3 +54,7 @@ The realistic threat model for a tool like this is malformed input:
 - It is not a monitoring system. A clean report on a stale snapshot says
   nothing about the current cluster state.
 
+## Handling snapshots responsibly
+
+Snapshots are usually harmless, but they can be sensitive in aggregate: a full
+dump of your program's accounts reveals your user base size, your storage
