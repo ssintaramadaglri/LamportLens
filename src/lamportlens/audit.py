@@ -17,3 +17,10 @@ from .rent import (
     STATUS_FUNDED,
     STATUS_UNDERFUNDED,
     AccountAssessment,
+    assess,
+)
+
+BANDS: list[tuple[str, int, int]] = [
+    ("0 bytes", 0, 0),
+    ("1-99", 1, 99),
+    ("100-999", 100, 999),
