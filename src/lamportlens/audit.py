@@ -43,3 +43,10 @@ class OwnerSummary:
 @dataclass
 class BandSummary:
     label: str
+    count: int = 0
+    locked: int = 0
+
+
+@dataclass
+class AuditReport:
+    record_count: int = 0
