@@ -57,3 +57,9 @@ class AuditReport:
     bands: list[BandSummary] = field(default_factory=list)
     owners: dict[str, OwnerSummary] = field(default_factory=dict)
     total_locked: int = 0
+    total_balance: int = 0
+    total_deficit: int = 0
+    reclaimable: int = 0
+
+    @property
+    def findings(self) -> int:
