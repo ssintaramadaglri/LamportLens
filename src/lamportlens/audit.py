@@ -63,3 +63,10 @@ class AuditReport:
 
     @property
     def findings(self) -> int:
+        return len(self.underfunded)
+
+
+def band_label(data_len: int) -> str:
+    for label, low, high in BANDS:
+        if low <= data_len <= high:
+            return label
