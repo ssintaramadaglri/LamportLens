@@ -77,3 +77,9 @@ def audit(
     records: list[AccountRecord],
     lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE,
 ) -> AuditReport:
+    report = AuditReport(
+        record_count=len(records),
+        lamports_per_byte=lamports_per_byte,
+        bands=[BandSummary(label=label) for label, _, _ in BANDS],
+    )
+    band_index = {band.label: band for band in report.bands}
