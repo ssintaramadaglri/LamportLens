@@ -70,3 +70,10 @@ def band_label(data_len: int) -> str:
     for label, low, high in BANDS:
         if low <= data_len <= high:
             return label
+    return BANDS[-1][0]
+
+
+def audit(
+    records: list[AccountRecord],
+    lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE,
+) -> AuditReport:
