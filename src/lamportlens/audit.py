@@ -96,3 +96,10 @@ def audit(
             report.total_locked += assessment.minimum
             report.total_balance += record.lamports
             if assessment.status in (STATUS_AT_MINIMUM, STATUS_BARELY_ABOVE):
+                report.reclaimable += record.lamports
+            band = band_index[band_label(record.data_len)]
+            band.count += 1
+            band.locked += assessment.minimum
+            owner = report.owners.setdefault(record.owner, OwnerSummary(owner=record.owner))
+            owner.accounts += 1
+            owner.locked += assessment.minimum
