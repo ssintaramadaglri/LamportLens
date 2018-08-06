@@ -103,3 +103,10 @@ def audit(
             owner = report.owners.setdefault(record.owner, OwnerSummary(owner=record.owner))
             owner.accounts += 1
             owner.locked += assessment.minimum
+            owner.balance += record.lamports
+            if assessment.status == STATUS_UNDERFUNDED:
+                owner.underfunded += 1
+        else:
+            owner = report.owners.setdefault(record.owner, OwnerSummary(owner=record.owner))
+            owner.accounts += 1
+
