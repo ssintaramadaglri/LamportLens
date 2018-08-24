@@ -24,3 +24,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="lamportlens",
         description="Rent-exempt and balance hygiene for captured Solana account snapshots.",
+    )
+    parser.add_argument("--version", action="version", version=f"lamportlens {__version__}")
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    audit_cmd = sub.add_parser("audit", help="full audit report")
+    audit_cmd.add_argument("input", type=Path, help="account snapshot (JSONL)")
+    audit_cmd.add_argument("--format", choices=("text", "json"), default="text")
