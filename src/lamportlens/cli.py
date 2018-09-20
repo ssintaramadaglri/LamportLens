@@ -38,3 +38,10 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=None,
         help=f"override the rate (default {DEFAULT_LAMPORTS_PER_BYTE})",
+    )
+    audit_cmd.add_argument(
+        "--preset",
+        choices=sorted(RATE_PRESETS),
+        default=None,
+        help="named SIMD-0437 step or the historical rate",
+    )
