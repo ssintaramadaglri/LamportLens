@@ -45,3 +45,9 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="named SIMD-0437 step or the historical rate",
     )
+
+    bands = sub.add_parser("bands", help="storage bands only")
+    bands.add_argument("input", type=Path, help="account snapshot (JSONL)")
+    bands.add_argument("--preset", choices=sorted(RATE_PRESETS), default=None)
+
+    owners = sub.add_parser("owners", help="per-owner summary only")
