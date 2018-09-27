@@ -58,3 +58,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def resolve_rate(lamports_per_byte: int | None, preset: str | None) -> int:
+    if lamports_per_byte is not None:
+        if lamports_per_byte <= 0:
+            print("lamportlens: lamports-per-byte must be > 0", file=sys.stderr)
+            raise SystemExit(2)
+        return lamports_per_byte
+    if preset is not None:
+        return RATE_PRESETS[preset]
