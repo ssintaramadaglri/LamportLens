@@ -65,3 +65,10 @@ def resolve_rate(lamports_per_byte: int | None, preset: str | None) -> int:
         return lamports_per_byte
     if preset is not None:
         return RATE_PRESETS[preset]
+    return DEFAULT_LAMPORTS_PER_BYTE
+
+
+def load(path: Path) -> tuple:
+    if not path.exists():
+        print(f"lamportlens: input not found: {path}", file=sys.stderr)
+        raise SystemExit(2)
