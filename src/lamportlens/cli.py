@@ -78,3 +78,10 @@ def load(path: Path) -> tuple:
     try:
         return parse_file(path)
     except OSError as exc:
+        print(f"lamportlens: cannot read {path}: {exc}", file=sys.stderr)
+        raise SystemExit(2)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
