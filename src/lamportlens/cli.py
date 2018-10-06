@@ -72,3 +72,9 @@ def load(path: Path) -> tuple:
     if not path.exists():
         print(f"lamportlens: input not found: {path}", file=sys.stderr)
         raise SystemExit(2)
+    if not path.is_file():
+        print(f"lamportlens: input is not a file: {path}", file=sys.stderr)
+        raise SystemExit(2)
+    try:
+        return parse_file(path)
+    except OSError as exc:
