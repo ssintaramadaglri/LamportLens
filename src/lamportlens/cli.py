@@ -92,3 +92,10 @@ def main(argv: list[str] | None = None) -> int:
         report = audit(records, rate)
         for band in report.bands:
             print(f"{band.label}: accounts {band.count}, locked {band.locked}")
+        return 1 if errors else 0
+
+    if args.command == "owners":
+        rate = resolve_rate(None, args.preset)
+        report = audit(records, rate)
+        ranked = sorted(
+            report.owners.values(), key=lambda o: (-o.locked, -o.accounts, o.owner)
