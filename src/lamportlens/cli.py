@@ -99,3 +99,9 @@ def main(argv: list[str] | None = None) -> int:
         report = audit(records, rate)
         ranked = sorted(
             report.owners.values(), key=lambda o: (-o.locked, -o.accounts, o.owner)
+        )
+        for owner in ranked:
+            print(
+                f"{owner.owner}  accounts {owner.accounts} "
+                f"underfunded {owner.underfunded} locked {owner.locked}"
+            )
