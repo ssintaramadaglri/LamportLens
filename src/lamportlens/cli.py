@@ -105,3 +105,10 @@ def main(argv: list[str] | None = None) -> int:
                 f"{owner.owner}  accounts {owner.accounts} "
                 f"underfunded {owner.underfunded} locked {owner.locked}"
             )
+        if not ranked:
+            print("no owners present in snapshot")
+        return 1 if errors else 0
+
+    rate = resolve_rate(args.lamports_per_byte, args.preset)
+    report = audit(records, rate)
+    analysis = Analysis(
