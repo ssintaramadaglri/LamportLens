@@ -23,3 +23,8 @@ class FormatError(ValueError):
 class AccountRecord:
     address: str
     lamports: int
+    data_len: int
+    owner: str
+    executable: bool
+    line: int
+
