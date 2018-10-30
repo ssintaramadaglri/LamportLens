@@ -39,3 +39,8 @@ def _require_non_empty_str(obj: dict, key: str, line: int) -> str:
 
 
 def _require_int(obj: dict, key: str, line: int, minimum: int, maximum: int | None = None) -> int:
+    if key not in obj:
+        raise FormatError(f"line {line}: missing required field '{key}'")
+    value = obj[key]
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise FormatError(f"line {line}: field '{key}' must be an integer")
