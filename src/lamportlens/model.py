@@ -55,3 +55,8 @@ def parse_record(obj: object, line: int) -> AccountRecord:
     """Validate one decoded JSON value into an AccountRecord."""
     if not isinstance(obj, dict):
         raise FormatError(f"line {line}: record must be a JSON object")
+    address = _require_non_empty_str(obj, "address", line)
+    lamports = _require_int(obj, "lamports", line, minimum=0)
+    data_len = _require_int(obj, "data_len", line, minimum=0, maximum=MAX_ACCOUNT_DATA_LEN)
+    owner = _require_non_empty_str(obj, "owner", line)
+    executable = False
