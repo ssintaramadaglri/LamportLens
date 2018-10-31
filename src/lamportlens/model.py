@@ -50,3 +50,8 @@ def _require_int(obj: dict, key: str, line: int, minimum: int, maximum: int | No
         raise FormatError(f"line {line}: field '{key}' must be <= {maximum}")
     return value
 
+
+def parse_record(obj: object, line: int) -> AccountRecord:
+    """Validate one decoded JSON value into an AccountRecord."""
+    if not isinstance(obj, dict):
+        raise FormatError(f"line {line}: record must be a JSON object")
