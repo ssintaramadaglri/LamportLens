@@ -66,3 +66,8 @@ def parse_record(obj: object, line: int) -> AccountRecord:
         executable = obj["executable"]
     return AccountRecord(
         address=address,
+        lamports=lamports,
+        data_len=data_len,
+        owner=owner,
+        executable=executable,
+        line=line,
