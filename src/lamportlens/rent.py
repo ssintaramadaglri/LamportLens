@@ -21,3 +21,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .model import AccountRecord
+
+ACCOUNT_STORAGE_OVERHEAD = 128
+
+RATE_PRESETS: dict[str, int] = {
