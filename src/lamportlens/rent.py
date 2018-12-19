@@ -26,3 +26,7 @@ from .model import AccountRecord
 ACCOUNT_STORAGE_OVERHEAD = 128
 
 RATE_PRESETS: dict[str, int] = {
+    "salvage": 696,
+    "simd-0437-5": 696,
+    "simd-0437-4": 1322,
+    "simd-0437-3": 2575,
