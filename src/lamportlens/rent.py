@@ -54,3 +54,8 @@ def minimum_balance(data_len: int, lamports_per_byte: int = DEFAULT_LAMPORTS_PER
     if data_len < 0:
         raise ValueError("data_len must be >= 0")
     if lamports_per_byte <= 0:
+        raise ValueError("lamports_per_byte must be > 0")
+    return (ACCOUNT_STORAGE_OVERHEAD + data_len) * lamports_per_byte
+
+
+@dataclass(frozen=True)
