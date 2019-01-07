@@ -64,3 +64,8 @@ class AccountAssessment:
     minimum: int
     surplus: int
     status: str
+
+
+def assess(
+    record: AccountRecord, lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE
+) -> AccountAssessment:
