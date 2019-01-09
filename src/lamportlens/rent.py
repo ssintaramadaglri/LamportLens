@@ -69,3 +69,8 @@ class AccountAssessment:
 def assess(
     record: AccountRecord, lamports_per_byte: int = DEFAULT_LAMPORTS_PER_BYTE
 ) -> AccountAssessment:
+    """Classify one account against the rent-exempt minimum.
+
+    Executable accounts are excluded from the rent comparison on purpose:
+    programs held by the loader do not follow the account rent-exemption rule
+    in the same way, and pretending they do would produce phantom findings.
