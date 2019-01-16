@@ -18,3 +18,10 @@ LIST_LIMIT = 10
 @dataclass
 class Analysis:
     source: str
+    report: AuditReport
+    parse_errors: list[tuple[int, str]]
+    list_limit: int = LIST_LIMIT
+
+    @property
+    def findings(self) -> int:
+        return self.report.findings + len(self.parse_errors)
