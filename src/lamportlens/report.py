@@ -12,3 +12,9 @@ from dataclasses import dataclass
 from .audit import AuditReport, statuses_in_order
 from .rent import STATUS_UNDERFUNDED
 
+LIST_LIMIT = 10
+
+
+@dataclass
+class Analysis:
+    source: str
