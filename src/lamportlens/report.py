@@ -32,3 +32,10 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     report = analysis.report
     lines: list[str] = []
     lines.append("LAMPORTLENS REPORT")
+    lines.append(f"input: {analysis.source}")
+    lines.append(
+        f"records: {report.record_count} | "
+        f"lamports per byte: {report.lamports_per_byte} | "
+        f"parse errors: {len(analysis.parse_errors)}"
+    )
+    lines.append("")
