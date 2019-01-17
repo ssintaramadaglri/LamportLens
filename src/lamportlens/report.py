@@ -25,3 +25,10 @@ class Analysis:
     @property
     def findings(self) -> int:
         return self.report.findings + len(self.parse_errors)
+
+
+def render_text(analysis: Analysis, limit: int | None = None) -> str:
+    limit = analysis.list_limit if limit is None else limit
+    report = analysis.report
+    lines: list[str] = []
+    lines.append("LAMPORTLENS REPORT")
