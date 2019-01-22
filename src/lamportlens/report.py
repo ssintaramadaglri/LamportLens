@@ -39,3 +39,9 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
         f"parse errors: {len(analysis.parse_errors)}"
     )
     lines.append("")
+    lines.append("STATUS COUNTS")
+    for status in statuses_in_order(report):
+        lines.append(f"  {status}: {report.status_counts.get(status, 0)}")
+    lines.append("")
+    lines.append("TOTALS")
+    lines.append(f"  locked in exemptions: {report.total_locked}")
