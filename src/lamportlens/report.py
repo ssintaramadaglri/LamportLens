@@ -52,3 +52,10 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     lines.append(f"UNDERFUNDED (first {limit}, smallest surplus first)")
     for assessment in report.underfunded[:limit]:
         lines.append(
+            f"  {assessment.record.address} "
+            f"owner {assessment.record.owner} "
+            f"lamports {assessment.record.lamports} "
+            f"deficit {-assessment.surplus}"
+        )
+    if len(report.underfunded) > limit:
+        lines.append(f"  ... {len(report.underfunded) - limit} more")
