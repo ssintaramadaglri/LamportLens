@@ -45,3 +45,10 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     lines.append("")
     lines.append("TOTALS")
     lines.append(f"  locked in exemptions: {report.total_locked}")
+    lines.append(f"  balances observed: {report.total_balance}")
+    lines.append(f"  underfunded deficit: {report.total_deficit}")
+    lines.append(f"  reclaimable on close: {report.reclaimable}")
+    lines.append("")
+    lines.append(f"UNDERFUNDED (first {limit}, smallest surplus first)")
+    for assessment in report.underfunded[:limit]:
+        lines.append(
