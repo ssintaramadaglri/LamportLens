@@ -59,3 +59,10 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
         )
     if len(report.underfunded) > limit:
         lines.append(f"  ... {len(report.underfunded) - limit} more")
+    if not report.underfunded:
+        lines.append("  none")
+    lines.append("")
+    lines.append(f"BANDS (first {limit})")
+    for band in report.bands:
+        lines.append(f"  {band.label}: accounts {band.count}, locked {band.locked}")
+    lines.append("")
