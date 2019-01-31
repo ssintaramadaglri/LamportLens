@@ -86,3 +86,10 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     if not analysis.parse_errors:
         lines.append("  none")
     lines.append("")
+    lines.append(f"FINDINGS: {analysis.findings}")
+    return "\n".join(lines) + "\n"
+
+
+def render_json(analysis: Analysis) -> dict:
+    report = analysis.report
+    return {
