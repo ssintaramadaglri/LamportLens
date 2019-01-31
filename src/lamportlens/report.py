@@ -66,3 +66,9 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     for band in report.bands:
         lines.append(f"  {band.label}: accounts {band.count}, locked {band.locked}")
     lines.append("")
+    lines.append(f"OWNERS (top {min(5, limit)} by locked lamports)")
+    ranked = sorted(
+        report.owners.values(), key=lambda o: (-o.locked, -o.accounts, o.owner)
+    )
+    for owner in ranked[: min(5, limit)]:
+        lines.append(
