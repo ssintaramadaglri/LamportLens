@@ -72,3 +72,10 @@ def render_text(analysis: Analysis, limit: int | None = None) -> str:
     )
     for owner in ranked[: min(5, limit)]:
         lines.append(
+            f"  {owner.owner}  accounts {owner.accounts} "
+            f"underfunded {owner.underfunded} locked {owner.locked}"
+        )
+    if not ranked:
+        lines.append("  none")
+    lines.append("")
+    lines.append(f"PARSE ERRORS (first {limit})")
