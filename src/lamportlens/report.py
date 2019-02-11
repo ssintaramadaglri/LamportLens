@@ -113,3 +113,10 @@ def render_json(analysis: Analysis) -> dict:
                 "owner": a.record.owner,
                 "lamports": a.record.lamports,
                 "minimum": a.minimum,
+                "deficit": -a.surplus,
+            }
+            for a in sorted(
+                report.underfunded, key=lambda a: (a.surplus, a.record.address)
+            )
+        ],
+        "bands": [
