@@ -99,3 +99,10 @@ def render_json(analysis: Analysis) -> dict:
         "findings": analysis.findings,
         "status_counts": {
             status: report.status_counts.get(status, 0)
+            for status in statuses_in_order(report)
+        },
+        "totals": {
+            "locked": report.total_locked,
+            "balance": report.total_balance,
+            "deficit": report.total_deficit,
+            "reclaimable": report.reclaimable,
