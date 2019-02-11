@@ -106,3 +106,10 @@ def render_json(analysis: Analysis) -> dict:
             "balance": report.total_balance,
             "deficit": report.total_deficit,
             "reclaimable": report.reclaimable,
+        },
+        "underfunded": [
+            {
+                "address": a.record.address,
+                "owner": a.record.owner,
+                "lamports": a.record.lamports,
+                "minimum": a.minimum,
