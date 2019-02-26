@@ -18,3 +18,9 @@ class CleanSnapshotTests(unittest.TestCase):
         assert not errors
         cls.report = audit(records)
 
+    def test_counts(self):
+        self.assertEqual(self.report.record_count, 12)
+        self.assertEqual(self.report.status_counts.get(STATUS_FUNDED), 11)
+        self.assertEqual(self.report.status_counts.get(STATUS_EXCLUDED), 1)
+        self.assertEqual(self.report.findings, 0)
+
