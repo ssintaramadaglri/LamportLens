@@ -36,3 +36,9 @@ class SnapshotTests(unittest.TestCase):
         assert not errors
         cls.report = audit(records)
 
+    def test_status_counts(self):
+        self.assertEqual(self.report.status_counts.get(STATUS_UNDERFUNDED), 3)
+        self.assertEqual(self.report.status_counts.get(STATUS_AT_MINIMUM), 7)
+        self.assertEqual(self.report.status_counts.get("barely-above"), 1)
+        self.assertEqual(self.report.status_counts.get(STATUS_FUNDED), 31)
+        self.assertEqual(self.report.status_counts.get(STATUS_EXCLUDED), 2)
