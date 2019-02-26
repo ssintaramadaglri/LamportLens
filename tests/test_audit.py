@@ -30,3 +30,9 @@ class CleanSnapshotTests(unittest.TestCase):
 
 
 class SnapshotTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        records, errors = parse_file(SAMPLES / "snapshot.jsonl")
+        assert not errors
+        cls.report = audit(records)
+
