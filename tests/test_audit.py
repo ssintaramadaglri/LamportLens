@@ -12,3 +12,9 @@ SAMPLES = Path(__file__).resolve().parents[1] / "samples"
 
 
 class CleanSnapshotTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        records, errors = parse_file(SAMPLES / "clean-snapshot.jsonl")
+        assert not errors
+        cls.report = audit(records)
+
