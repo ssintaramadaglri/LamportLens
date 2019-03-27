@@ -13,3 +13,9 @@ SAMPLES = Path(__file__).resolve().parents[1] / "samples"
 
 
 def run(args: list[str]) -> tuple[int, str]:
+    buffer = io.StringIO()
+    with contextlib.redirect_stdout(buffer):
+        code = main(args)
+    return code, buffer.getvalue()
+
+
