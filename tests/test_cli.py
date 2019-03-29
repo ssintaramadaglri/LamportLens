@@ -19,3 +19,10 @@ def run(args: list[str]) -> tuple[int, str]:
     return code, buffer.getvalue()
 
 
+class ExitCodeTests(unittest.TestCase):
+    def test_clean_snapshot_exits_zero(self):
+        code, output = run(["audit", str(SAMPLES / "clean-snapshot.jsonl")])
+        self.assertEqual(code, 0)
+        self.assertIn("FINDINGS: 0", output)
+
+    def test_snapshot_exits_one(self):
