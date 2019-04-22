@@ -39,3 +39,9 @@ class ExitCodeTests(unittest.TestCase):
     def test_missing_input_exits_two(self):
         with self.assertRaises(SystemExit) as caught:
             run(["audit", str(SAMPLES / "nope.jsonl")])
+        self.assertEqual(caught.exception.code, 2)
+
+    def test_version_exits_zero(self):
+        with self.assertRaises(SystemExit) as caught:
+            run(["--version"])
+        self.assertEqual(caught.exception.code, 0)
