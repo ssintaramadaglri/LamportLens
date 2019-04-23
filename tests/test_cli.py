@@ -45,3 +45,10 @@ class ExitCodeTests(unittest.TestCase):
         with self.assertRaises(SystemExit) as caught:
             run(["--version"])
         self.assertEqual(caught.exception.code, 0)
+
+
+class FormatTests(unittest.TestCase):
+    def test_json_shape(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = main(["audit", str(SAMPLES / "snapshot.jsonl"), "--format", "json"])
