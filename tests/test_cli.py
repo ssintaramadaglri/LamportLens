@@ -52,3 +52,9 @@ class FormatTests(unittest.TestCase):
         buffer = io.StringIO()
         with contextlib.redirect_stdout(buffer):
             code = main(["audit", str(SAMPLES / "snapshot.jsonl"), "--format", "json"])
+        self.assertEqual(code, 1)
+        payload = json.loads(buffer.getvalue())
+        self.assertEqual(payload["records"], 44)
+        self.assertEqual(payload["findings"], 3)
+        self.assertEqual(payload["lamports_per_byte"], 6333)
+        self.assertEqual(len(payload["underfunded"]), 3)
