@@ -58,3 +58,10 @@ class FormatTests(unittest.TestCase):
         self.assertEqual(payload["findings"], 3)
         self.assertEqual(payload["lamports_per_byte"], 6333)
         self.assertEqual(len(payload["underfunded"]), 3)
+        self.assertEqual(len(payload["bands"]), 7)
+        self.assertIn("totals", payload)
+
+    def test_rate_override_changes_findings(self):
+        default_code, default_out = run(["audit", str(SAMPLES / "snapshot.jsonl")])
+        historical_code, historical_out = run(
+            ["audit", str(SAMPLES / "snapshot.jsonl"), "--preset", "historical"]
