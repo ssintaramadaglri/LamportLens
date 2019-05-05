@@ -65,3 +65,9 @@ class FormatTests(unittest.TestCase):
         default_code, default_out = run(["audit", str(SAMPLES / "snapshot.jsonl")])
         historical_code, historical_out = run(
             ["audit", str(SAMPLES / "snapshot.jsonl"), "--preset", "historical"]
+        )
+        self.assertEqual(default_code, 1)
+        self.assertEqual(historical_code, 1)
+        default_findings = int(default_out.split("FINDINGS: ")[1])
+        historical_findings = int(historical_out.split("FINDINGS: ")[1])
+        self.assertGreater(historical_findings, default_findings)
