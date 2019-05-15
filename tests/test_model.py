@@ -14,3 +14,10 @@ class ParseRecordTests(unittest.TestCase):
     def test_minimal_valid_record(self):
         record = parse_record(
             {"address": "A", "lamports": 1, "data_len": 0, "owner": "O"}, 1
+        )
+        self.assertEqual(record.data_len, 0)
+        self.assertFalse(record.executable)
+
+    def test_executable_true_is_kept(self):
+        record = parse_record(
+            {"address": "A", "lamports": 1, "data_len": 0, "owner": "O", "executable": True},
