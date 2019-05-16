@@ -21,3 +21,10 @@ class ParseRecordTests(unittest.TestCase):
     def test_executable_true_is_kept(self):
         record = parse_record(
             {"address": "A", "lamports": 1, "data_len": 0, "owner": "O", "executable": True},
+            1,
+        )
+        self.assertTrue(record.executable)
+
+    def test_missing_address_is_rejected(self):
+        with self.assertRaises(FormatError):
+            parse_record({"lamports": 1, "data_len": 0, "owner": "O"}, 3)
