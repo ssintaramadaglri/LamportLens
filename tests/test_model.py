@@ -28,3 +28,10 @@ class ParseRecordTests(unittest.TestCase):
     def test_missing_address_is_rejected(self):
         with self.assertRaises(FormatError):
             parse_record({"lamports": 1, "data_len": 0, "owner": "O"}, 3)
+
+    def test_empty_address_is_rejected(self):
+        with self.assertRaises(FormatError):
+            parse_record(
+                {"address": "", "lamports": 1, "data_len": 0, "owner": "O"}, 3
+            )
+
