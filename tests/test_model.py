@@ -42,3 +42,10 @@ class ParseRecordTests(unittest.TestCase):
             )
 
     def test_data_len_over_max_is_rejected(self):
+        with self.assertRaises(FormatError):
+            parse_record(
+                {
+                    "address": "A",
+                    "lamports": 1,
+                    "data_len": 10_485_761,
+                    "owner": "O",
