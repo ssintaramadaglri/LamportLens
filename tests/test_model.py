@@ -71,3 +71,10 @@ class ParseRecordTests(unittest.TestCase):
             {"address": "A", "lamports": 1, "data_len": 0, "owner": "O", "rent_epoch": 4},
             1,
         )
+        self.assertEqual(record.owner, "O")
+
+
+class ParseTextTests(unittest.TestCase):
+    def test_broken_lines_collect_errors_and_keep_going(self):
+        text = (SAMPLES / "broken-lines.jsonl").read_text(encoding="utf-8")
+        records, errors = parse_text(text)
