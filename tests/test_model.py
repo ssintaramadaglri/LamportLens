@@ -64,3 +64,10 @@ class ParseRecordTests(unittest.TestCase):
             parse_record(
                 {"address": "A", "lamports": 1, "data_len": 0, "owner": "O", "executable": "yes"},
                 3,
+            )
+
+    def test_unknown_keys_are_ignored(self):
+        record = parse_record(
+            {"address": "A", "lamports": 1, "data_len": 0, "owner": "O", "rent_epoch": 4},
+            1,
+        )
