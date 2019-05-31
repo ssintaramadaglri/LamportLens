@@ -57,3 +57,10 @@ class ParseRecordTests(unittest.TestCase):
         with self.assertRaises(FormatError):
             parse_record(
                 {"address": "A", "lamports": "1", "data_len": 0, "owner": "O"}, 3
+            )
+
+    def test_non_boolean_executable_is_rejected(self):
+        with self.assertRaises(FormatError):
+            parse_record(
+                {"address": "A", "lamports": 1, "data_len": 0, "owner": "O", "executable": "yes"},
+                3,
