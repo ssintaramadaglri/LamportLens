@@ -37,3 +37,9 @@ class MinimumBalanceTests(unittest.TestCase):
         self.assertEqual(minimum_balance(0, 6960), 890_880)
 
     def test_token_account_size(self):
+        # (128 + 165) * 6333 = 1,855,569 at the current step, and the familiar
+        # 2,039,280 at the historical rate.
+        self.assertEqual(minimum_balance(165), 1_855_569)
+        self.assertEqual(minimum_balance(165, 6960), 2_039_280)
+
+    def test_presets_are_ordered(self):
