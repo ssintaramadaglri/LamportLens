@@ -12,3 +12,9 @@ from lamportlens.rent import (
     STATUS_EXCLUDED,
     STATUS_FUNDED,
     STATUS_UNDERFUNDED,
+    assess,
+    minimum_balance,
+)
+
+
+def record(lamports: int, data_len: int, executable: bool = False) -> AccountRecord:
