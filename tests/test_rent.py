@@ -49,3 +49,10 @@ class MinimumBalanceTests(unittest.TestCase):
 
     def test_invalid_inputs_raise(self):
         with self.assertRaises(ValueError):
+            minimum_balance(-1)
+        with self.assertRaises(ValueError):
+            minimum_balance(0, 0)
+
+
+class AssessTests(unittest.TestCase):
+    def test_underfunded(self):
