@@ -43,3 +43,9 @@ class MinimumBalanceTests(unittest.TestCase):
         self.assertEqual(minimum_balance(165, 6960), 2_039_280)
 
     def test_presets_are_ordered(self):
+        self.assertEqual(RATE_PRESETS["historical"], 6960)
+        self.assertEqual(RATE_PRESETS["simd-0437-1"], 6333)
+        self.assertEqual(RATE_PRESETS["salvage"], 696)
+
+    def test_invalid_inputs_raise(self):
+        with self.assertRaises(ValueError):
