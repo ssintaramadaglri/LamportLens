@@ -56,3 +56,9 @@ class MinimumBalanceTests(unittest.TestCase):
 
 class AssessTests(unittest.TestCase):
     def test_underfunded(self):
+        result = assess(record(800_000, 0))
+        self.assertEqual(result.status, STATUS_UNDERFUNDED)
+        self.assertEqual(result.surplus, -10_624)
+
+    def test_at_minimum(self):
+        self.assertEqual(assess(record(810_624, 0)).status, STATUS_AT_MINIMUM)
