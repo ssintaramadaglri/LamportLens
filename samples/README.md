@@ -9,3 +9,7 @@ reproducible:
 python samples/build_fixture.py
 clean-snapshot.jsonl: 12 records
 snapshot.jsonl: 44 records
+```
+
+Program ids that appear are real, well-known Solana addresses: the system
+program, SPL token, token-2022, the associated token program, and the BPF
