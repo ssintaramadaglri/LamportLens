@@ -28,3 +28,8 @@ like, and to give the CLI an exit-0 case.
 ## snapshot.jsonl
 
 44 records built to exercise every status at the default rate of 6,333
+lamports per byte:
+
+| Group | Count | What it exercises |
+|---|---|---|
+| token accounts at 2,039,280 lamports | 10 | funded under the current rate, exactly at the historical minimum |
