@@ -42,3 +42,8 @@ lamports per byte:
 | executable programs | 2 | the excluded bucket |
 | assorted small accounts | 3 | owner spread |
 
+Expected result: 3 underfunded accounts with deficits 255,569, 655,569 and
+110,624 lamports, a total deficit of 1,021,762, 7 at-minimum accounts, and
+findings equal to 3. Exit code 1.
+
+## broken-lines.jsonl
