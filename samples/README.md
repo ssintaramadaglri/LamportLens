@@ -47,3 +47,8 @@ Expected result: 3 underfunded accounts with deficits 255,569, 655,569 and
 findings equal to 3. Exit code 1.
 
 ## broken-lines.jsonl
+
+Nine lines, seven of them deliberately invalid, covering every validation
+rule: invalid JSON, missing address, negative lamports, a data length above
+10 MiB, missing owner, a string lamports value, and a non-boolean executable
+flag. Two valid records surround the bad lines to prove that parsing
