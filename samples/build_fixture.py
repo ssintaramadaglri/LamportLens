@@ -95,3 +95,11 @@ def build_snapshot() -> list[dict]:
     # computed from the same formula the tool uses, with a margin, so these
     # stay funded on purpose.
     for i in range(23, 31):
+        data_len = 300 + (i - 23) * 20
+        records.append(record(address(i), (128 + data_len) * 6333 + 500_000, data_len, TOKEN))
+    for i in range(31, 39):
+        data_len = 2_000 + (i - 31) * 100
+        records.append(record(address(i), (128 + data_len) * 6333 + 2_000_000, data_len, TOKEN_2022))
+
+    # Two executable programs, excluded from the rent comparison.
+    records.append(record(address(39), 1_000, 400_000, LOADER, executable=True))
