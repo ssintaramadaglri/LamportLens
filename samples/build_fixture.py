@@ -86,3 +86,12 @@ def build_snapshot() -> list[dict]:
     records.append(record(address(19), ZERO_MIN, 0, SYSTEM))
     records.append(record(address(20), 700_000, 0, ASSOCIATED))
 
+    # A large mint account and a large program data account, both funded
+    # above their (large) minima.
+    records.append(record(address(21), 6_400_000_000, 1_000_000, TOKEN))
+    records.append(record(address(22), 16_000_000_000, 2_500_000, LOADER))
+
+    # Mid-size accounts to fill the 100-999 and 1k-9.9k bands. Balances are
+    # computed from the same formula the tool uses, with a margin, so these
+    # stay funded on purpose.
+    for i in range(23, 31):
