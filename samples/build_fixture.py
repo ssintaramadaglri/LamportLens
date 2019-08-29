@@ -61,3 +61,12 @@ def build_clean() -> list[dict]:
     records.append(record(address(10), 9_000_000, 0, SYSTEM))
     records.append(record(address(11), 500_000, 300_000, LOADER, executable=True))
     return records
+
+
+def build_snapshot() -> list[dict]:
+    records = []
+
+    # Ten SPL token accounts funded at the historical minimum, comfortably
+    # above the current one.
+    for i in range(10):
+        records.append(record(address(i), 2_039_280, TOKEN_ACCOUNT_LEN, TOKEN))
