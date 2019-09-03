@@ -103,3 +103,11 @@ def build_snapshot() -> list[dict]:
 
     # Two executable programs, excluded from the rent comparison.
     records.append(record(address(39), 1_000, 400_000, LOADER, executable=True))
+    records.append(record(address(40), 1_000, 800_000, LOADER, executable=True))
+
+    # Two more funded accounts and one at-minimum, to give the owner table
+    # some spread across owners.
+    records.append(record(address(41), 8_000_000, 82, ASSOCIATED))
+    records.append(record(address(42), 8_500_000, 82, ASSOCIATED))
+    records.append(record(address(43), (128 + 82) * 6333, 82, ASSOCIATED))
+    return records
