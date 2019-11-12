@@ -8,3 +8,10 @@ Usage (from the repository root, after `cd verifier && npm run build`):
 
     python scripts/parity.py
 
+Exit 0 when every fixture agrees, 1 otherwise.
+"""
+from __future__ import annotations
+
+import json
+import os
+import subprocess
