@@ -23,3 +23,11 @@ VERIFIER = ROOT / "verifier" / "dist" / "verify.js"
 FIXTURES = ["clean-snapshot.jsonl", "snapshot.jsonl", "broken-lines.jsonl"]
 
 STATUS_KEYS = [
+    "underfunded",
+    "at-minimum",
+    "barely-above",
+    "funded",
+    "executable-excluded",
+]
+TOTAL_KEYS = ["locked", "balance", "deficit", "reclaimable"]
+
