@@ -46,3 +46,10 @@ def python_report(fixture: Path) -> dict:
 
 def verifier_report(fixture: Path) -> dict:
     result = subprocess.run(
+        ["node", str(VERIFIER), str(fixture)],
+        capture_output=True,
+        text=True,
+        cwd=str(ROOT),
+    )
+    return json.loads(result.stdout)
+
