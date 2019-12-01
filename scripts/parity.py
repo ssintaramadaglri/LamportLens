@@ -53,3 +53,11 @@ def verifier_report(fixture: Path) -> dict:
     )
     return json.loads(result.stdout)
 
+
+def compare(name: str, py: dict, ts: dict) -> list[str]:
+    disagreements: list[str] = []
+
+    def check(key: str, py_value, ts_value) -> None:
+        if py_value != ts_value:
+            disagreements.append(f"{key}: python={py_value} typescript={ts_value}")
+
