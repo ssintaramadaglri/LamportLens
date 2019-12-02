@@ -76,3 +76,11 @@ def compare(name: str, py: dict, ts: dict) -> list[str]:
     check("parse_error_count", len(py["parse_errors"]), len(ts["parse_errors"]))
     check("findings", py["findings"], ts["findings"])
     return disagreements
+
+
+def main() -> int:
+    if not VERIFIER.exists():
+        print(f"verifier build missing at {VERIFIER}")
+        print("run: cd verifier && npm install && npm run build")
+        return 1
+    failures = 0
