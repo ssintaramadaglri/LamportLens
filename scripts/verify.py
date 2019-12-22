@@ -41,3 +41,14 @@ def svg_files() -> list[Path]:
 
 def check_svg_parse() -> tuple[bool, str]:
     bad = []
+    for path in svg_files():
+        try:
+            ET.parse(path)
+        except ET.ParseError as exc:
+            bad.append(f"{path.name}: {exc}")
+    if bad:
+        return False, "svg parse: " + "; ".join(bad)
+    return True, f"svg parse: {len(svg_files())} files well formed"
+
+
+def check_svg_filters() -> tuple[bool, str]:
