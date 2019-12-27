@@ -86,3 +86,14 @@ def check_em_dash() -> tuple[bool, str]:
         if path.suffix not in TEXT_EXTENSIONS and path.name not in {
             ".editorconfig", ".gitattributes", ".gitignore", "Makefile",
         }:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        for form in EM_DASH_FORMS:
+            if form in text:
+                bad.append(str(path.relative_to(ROOT)))
+                break
+    if bad:
+        return False, "em dash: found in " + ", ".join(bad)
