@@ -109,3 +109,14 @@ def check_readme_attr_blocks() -> tuple[bool, str]:
 
 def check_readme_terms() -> tuple[bool, str]:
     text = (ROOT / "README.md").read_text(encoding="utf-8").lower()
+    hits = [term for term in BANNED_TERMS if term.lower() in text]
+    if hits:
+        return False, "readme terms: banned marketing term " + ", ".join(hits)
+    return True, "readme terms: no banned marketing terms"
+
+
+def check_svg_metadata() -> tuple[bool, str]:
+    bad = []
+    for path in svg_files():
+        tree = ET.parse(path)
+        root = tree.getroot()
