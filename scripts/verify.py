@@ -120,3 +120,14 @@ def check_svg_metadata() -> tuple[bool, str]:
     for path in svg_files():
         tree = ET.parse(path)
         root = tree.getroot()
+        if "viewBox" not in root.attrib:
+            bad.append(f"{path.name}: viewBox")
+            continue
+        if root.attrib.get("role") != "img":
+            bad.append(f"{path.name}: role")
+        if root.find("{http://www.w3.org/2000/svg}title") is None:
+            bad.append(f"{path.name}: title")
+        if root.find("{http://www.w3.org/2000/svg}desc") is None:
+            bad.append(f"{path.name}: desc")
+    if bad:
+        return False, "svg metadata: " + "; ".join(bad)
