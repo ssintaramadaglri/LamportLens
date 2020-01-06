@@ -154,3 +154,14 @@ def check_svg_label_overlap() -> tuple[bool, str]:
                 y = float(element.attrib.get("y", "0"))
             except ValueError:
                 continue
+            font_size = float(element.attrib.get("font-size", "11"))
+            family = element.attrib.get("font-family", "")
+            anchor = element.attrib.get("text-anchor", "start")
+            width = _text_width(content, font_size, family)
+            if anchor == "middle":
+                left = x - width / 2
+            elif anchor == "end":
+                left = x - width
+            else:
+                left = x
+            labels.append((round(y), left, left + width, content))
