@@ -143,3 +143,14 @@ def check_svg_label_overlap() -> tuple[bool, str]:
     bad = []
     ns = "{http://www.w3.org/2000/svg}"
     for path in svg_files():
+        tree = ET.parse(path)
+        labels = []
+        for element in tree.getroot().iter(f"{ns}text"):
+            content = "".join(element.itertext()).strip()
+            if not content:
+                continue
+            try:
+                x = float(element.attrib.get("x", "0"))
+                y = float(element.attrib.get("y", "0"))
+            except ValueError:
+                continue
