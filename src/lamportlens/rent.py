@@ -74,3 +74,13 @@ def assess(
     Executable accounts are excluded from the rent comparison on purpose:
     programs held by the loader do not follow the account rent-exemption rule
     in the same way, and pretending they do would produce phantom findings.
+    """
+    minimum = minimum_balance(record.data_len, lamports_per_byte)
+    surplus = record.lamports - minimum
+    if record.executable:
+        return AccountAssessment(record, minimum, surplus, STATUS_EXCLUDED)
+    if record.lamports < minimum:
+        return AccountAssessment(record, minimum, surplus, STATUS_UNDERFUNDED)
+    if record.lamports == minimum:
+        return AccountAssessment(record, minimum, surplus, STATUS_AT_MINIMUM)
+    if record.lamports <= int(minimum * BARELY_ABOVE_RATIO):
