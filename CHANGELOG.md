@@ -147,3 +147,28 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.3.0] - 2018-10-09
 
 ### Added
+
+- Accounts are grouped into seven fixed data-length bands with counts
+  and locked lamports per band.
+- A per-owner summary ranks owners by the bond they hold.
+- `bands` and `owners` subcommands render each table on its own.
+
+## [0.2.0] - 2017-11-20
+
+### Added
+
+- Status classification: underfunded, at-minimum, barely-above, and
+  funded, plus the executable-excluded bucket for program accounts.
+- The exit-code table is documented in the README and covered by
+  tests, one test per status.
+
+## [0.1.0] - 2016-12-14
+
+### Added
+
+- The JSONL account model with strict per-line validation: address,
+  lamports, data_len, owner, and the optional executable flag.
+- The rent-exempt minimum as a single function, and the first text
+  audit report over a captured snapshot.
+
+<!-- draft note 23 -->
