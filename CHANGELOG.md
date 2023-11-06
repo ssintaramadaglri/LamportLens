@@ -171,4 +171,4 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The rent-exempt minimum as a single function, and the first text
   audit report over a captured snapshot.
 
-<!-- draft note 461 -->
+<!-- draft note 462 -->
