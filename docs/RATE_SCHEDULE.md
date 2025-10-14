@@ -103,3 +103,5 @@ default rate on every fixture.
   `lamports_per_byte` and deprecating the floating point threshold.
 
 This document restates those sources; it does not replace them. When the
+network moves to the next step, re-read the upgrade notes before changing
+anything here.
