@@ -11,3 +11,6 @@ date-released: 2026-08-26
 keywords:
   - solana
   - rent
+  - lamports
+  - accounts
+  - cli
