@@ -71,3 +71,15 @@ include:
 - the smallest snapshot that reproduces the issue (two or three lines are
   usually enough);
 - the exact command line;
+- the observed output or crash, pasted verbatim.
+
+You can expect an acknowledgement within a few days. Fixes ship in a patch
+release with a changelog entry that describes the trigger honestly, without
+overstating the impact.
+
+## Scope of fixes
+
+Anything that crashes the parser, hangs the process on small input, writes
+outside the file named by `--output`, or produces an arithmetic result that
+disagrees with the documented formula is in scope. Social engineering,
+physical access, and issues in third-party tooling are out of scope.
