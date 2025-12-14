@@ -10,3 +10,6 @@
 *.cff text
 *.jsonl text
 *.json text
+Makefile text
+*.png binary
+*.gif binary
