@@ -62,5 +62,3 @@ reproducible or shareable) or a constructed vector. Constructed vectors are
 labelled as such here rather than presented as captured data. If you have a
 real capture, the tool reads it; the format is documented in
 `docs/FORMAT.md`.
-
-<!-- draft note 955 -->
