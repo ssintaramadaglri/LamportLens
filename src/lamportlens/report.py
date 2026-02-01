@@ -120,3 +120,23 @@ def render_json(analysis: Analysis) -> dict:
             )
         ],
         "bands": [
+            {"label": band.label, "accounts": band.count, "locked": band.locked}
+            for band in report.bands
+        ],
+        "owners": {
+            owner: {
+                "accounts": summary.accounts,
+                "underfunded": summary.underfunded,
+                "locked": summary.locked,
+                "balance": summary.balance,
+            }
+            for owner, summary in sorted(report.owners.items())
+        },
+        "parse_errors": [{"line": n, "message": m} for n, m in analysis.parse_errors],
+    }
+
+
+def underfunded_addresses(report: AuditReport) -> list[str]:
+    return [a.record.address for a in report.underfunded if a.status == STATUS_UNDERFUNDED]
+
+# draft note 970
