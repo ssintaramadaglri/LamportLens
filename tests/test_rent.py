@@ -73,3 +73,7 @@ class AssessTests(unittest.TestCase):
         self.assertEqual(assess(record(1, 400_000, executable=True)).status, STATUS_EXCLUDED)
 
 
+if __name__ == "__main__":
+    unittest.main()
+
+# draft note 978
