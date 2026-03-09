@@ -139,4 +139,4 @@ def render_json(analysis: Analysis) -> dict:
 def underfunded_addresses(report: AuditReport) -> list[str]:
     return [a.record.address for a in report.underfunded if a.status == STATUS_UNDERFUNDED]
 
-# draft note 970
+# draft note 985
