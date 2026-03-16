@@ -12,4 +12,4 @@
 - [ ] `docs/FORMAT.md` updated if a field, rule or exit code changed
 - [ ] Rate table in `docs/RATE_SCHEDULE.md` updated if a new SIMD step was added
 
-<!-- draft note 976 -->
+<!-- draft note 987 -->
