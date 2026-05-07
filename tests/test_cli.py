@@ -85,5 +85,3 @@ class FormatTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-# draft note 967
