@@ -69,5 +69,3 @@ test("broken lines are collected", () => {
   assert.equal(result.records, 2);
   assert.equal(result.parseErrors.length, 7);
 });
-
-// draft note 948
