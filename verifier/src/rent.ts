@@ -52,5 +52,3 @@ export function assess(record: AccountRecord, lamportsPerByte = DEFAULT_LAMPORTS
   if (record.lamports <= Math.trunc(minimum * BARELY_ABOVE_RATIO)) return STATUS_BARELY_ABOVE;
   return STATUS_FUNDED;
 }
-
-// draft note 966
