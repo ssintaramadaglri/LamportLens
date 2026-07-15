@@ -84,3 +84,5 @@ def assess(
     if record.lamports == minimum:
         return AccountAssessment(record, minimum, surplus, STATUS_AT_MINIMUM)
     if record.lamports <= int(minimum * BARELY_ABOVE_RATIO):
+        return AccountAssessment(record, minimum, surplus, STATUS_BARELY_ABOVE)
+    return AccountAssessment(record, minimum, surplus, STATUS_FUNDED)
