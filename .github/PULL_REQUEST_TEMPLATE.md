@@ -11,5 +11,3 @@
 - [ ] Report shape changes: real `audit` output pasted above
 - [ ] `docs/FORMAT.md` updated if a field, rule or exit code changed
 - [ ] Rate table in `docs/RATE_SCHEDULE.md` updated if a new SIMD step was added
-
-<!-- draft note 987 -->
