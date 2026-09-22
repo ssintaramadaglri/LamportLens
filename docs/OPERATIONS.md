@@ -23,7 +23,8 @@ Whatever you use to produce it, the rules are:
    looking at.
 4. Keep the file. Snapshots diff cleanly between runs, and the interesting
    question is usually not the absolute number but the change since last
-   week.
+   week. For very large captures, slice by owner program and audit each slice;
+   the band totals add because every band is per account.
 
 For a token program owned by a single mint, an export of the mint account and
 its token accounts is usually all you need: those are the accounts whose bonds
