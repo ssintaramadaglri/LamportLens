@@ -157,7 +157,7 @@ entry, because consumers diff this output in CI.
 
 Accounts at exactly the minimum are not findings. They are exempt, which is
 the state the cluster requires; they are reported under `reclaimable` because
-closing them recovers the bond, not because they are wrong.
+closing them recovers the bond, not because they are wrong. They still appear in the band totals, because bands measure the bond, not the finding status.
 
 ## Determinism guarantees
 
