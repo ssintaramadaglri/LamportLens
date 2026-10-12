@@ -10,7 +10,7 @@
     "test": "node --test dist/*.test.js"
   },
   "devDependencies": {
-    "@types/node": "20.16.1",
+    "@types/node": "26.6.4",
     "typescript": "7.0.2"
   }
 }
